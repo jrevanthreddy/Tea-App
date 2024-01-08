@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_main_home"
+                    android:title="Main Home" />
+                <item
+                    android:id="@+id/nav_shop_home"
+                    android:title="Shop Home" />
+                <item
+                    android:id="@+id/nav_dark_home_tea_room"
+                    android:title="Dark Home Tea Room" />
+                <item
+                    android:id="@+id/nav_metro_matcha"
+                    android:title="Metro Matcha" />
+                <item
+                    android:id="@+id/nav_verticl_shoecases"
+                    android:title="Vertical Shoecases" />
+            </group>
+        </menu>
+    </item>
+    <item android:title="PAGE">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_about_us"
+                    android:title="About us" />
+                <item
+                    android:id="@+id/nav_our_history"
+                    android:title="Our History" />
+                <item
+                    android:id="@+id/nav_our_process"
+                    android:title="Our Process" />
+                <item
+                    android:id="@+id/nav_restaurant_menu"
+                    android:title="Restaurant Menu" />
+                <item
+                    android:id="@+id/nav_booking_table"
+                    android:title="Booking Table" />
+                <item
+                    android:id="@+id/nav_our_team"
+                    android:title="Our Team" />
+                <item
+                    android:id="@+id/nav_price_plan"
+                    android:title="Price Plan" />
+                <item
+                    android:id="@+id/nav_faqs"
+                    android:title="FAQs" />
+                <item
+                    android:id="@+id/nav_contact_us"
+                    android:title="Contact_us" />
+                <item
+                    android:id="@+id/nav_404_error_page"
+                    android:title="404 Error Page" />
+                <item
+                    android:id="@+id/nav_Coming_soon"
+                    android:title="Coming Soon" />
+            </group>
+        </menu>
+    </item>
+    <item android:title="SHOP">
+        <menu>
+            <group>
+                <item
+                    android:id="@+id/nav_shop_layout"
+                    android:title="Shop Layout" />
+                <item
+                    android:id="@+id/nav_product_layout"
+                    android:title="Product Layouts" />
+                <item
+                    android:id="@+id/nav_product_types"
+                    android:title="Product Types" />
+                <item
+                    android:id="@+id/nav_shop_pages"
+                    android:title="Shop Pages" />
+            </group>
+        </menu>
+    </item>
+    <item android:title="GALLERY">
+        <menu>
+            <group>
+                <item
+                    android:id="@+id/nav_gallery_2_columns"
+                    android:title="Gallery 2 Columns" />
+                <item
+                    android:id="@+id/nav_gallery_3_columns"
+                    android:title="Gallery 3 Columns" />
+                <item
+                    android:id="@+id/nav_gallery_4_columns"
+                    android:title="Gallery 4 Columns" />
+                <item
+                    android:id="@+id/nav_gallery_mixed_style"
+                    android:title="Gallery Mixed Style" />
+            </group>
+        </menu>
+    </item>
+    <item android:title="BLOG">
+        <menu>
+            <group>
+                <item
+                    android:id="@+id/nav_no_sidebar"
+                    android:title="NO Slidebar" />
+                <item
+                    android:id="@+id/nav_right_sidebar"
+                    android:title="Right Sidebar" />
+                <item
+                    android:id="@+id/nav_left_sidebar"
+                    android:title="Left Sidebar" />
+                <item
+                    android:id="@+id/nav_single_post_types"
+                    android:title="Single Post Types">
+                    <menu>
+                        <group>
+                            <item
+                                android:id="@+id/nav_standard_post"
+                                android:title="Standard Post" />
+                            <item
+                                android:id="@+id/nav_quote_post"
+                                android:title="Quote Post " />
+                            <item
+                                android:id="@+id/nav_link_post"
+                                android:title="Link Post" />
+                            <item
+                                android:id="@+id/nav_audio_post"
+                                android:title="Audio Post" />
+                            <item
+                                android:id="@+id/nav_gallery_post"
+                                android:title="Gallery Post" />
+                            <item
+                                android:id="@+id/nav_video_post"
+                                android:title="Video Post" />
+                            <item
+                                android:id="@+id/nav_no_side_bar_post"
+                                android:title="No Sidebar Post" />
+                        </group>
+                    </menu>
+                </item>
+            </group>
+        </menu>
+    </item>
+</menu>
