@@ -2,10 +2,10 @@ package com.example.tea;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,23 +13,29 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.codebyashish.autoimageslider.AutoImageSlider;
+import com.codebyashish.autoimageslider.Enums.ImageScaleType;
+import com.codebyashish.autoimageslider.ExceptionsClass;
+import com.codebyashish.autoimageslider.Models.ImageSlidesModel;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     static final float END_SCALE = 0.7f;
-    TextView txt1, txt2;
-    Button shop_btn;
-    Animation anim1, anim2, menu_anim;
-    RelativeLayout relativeLayout;
-    ImageView imageView;
+    TextView txt1, txt2,txt3,txt4,txt5,txt6,txt7;
+    Button shop_btn,learn_btn,shop_btn1;
+    Animation anim1, anim2, menu_anim,leaf_anim1;
+    ImageView imageView,imageView1,imageView2;
     NavigationView navigationView;
     DrawerLayout drawerLayout;
-    ConstraintLayout contentView;
+    LinearLayout contentView,linearlayout_shop;
+    TextView about_us,wholesale_inquiries,coperation_gifts,our_history,careers,charities, support,shipping_returns,faqs,store_location,my_account,privacy_policy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,31 +44,88 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
         txt1 = findViewById(R.id.textView1);
         txt2 = findViewById(R.id.textView2);
+        txt3 = findViewById(R.id.textView5);
+        txt4 = findViewById(R.id.textView6);
+        txt5 = findViewById(R.id.experience);
+        txt6 = findViewById(R.id.story_behind);
+        txt7 = findViewById(R.id.specilize);
         shop_btn = findViewById(R.id.shop_Btn);
-        relativeLayout = findViewById(R.id.relativelayout);
+        learn_btn = findViewById(R.id.learn_more);
+        shop_btn1 = findViewById(R.id.shop_Btn1);
+        linearlayout_shop = findViewById(R.id.linear_layout_shop);
         imageView = findViewById(R.id.menu_image);
+        imageView1 = findViewById(R.id.cart_image);
+        imageView2 = findViewById(R.id.white_leaf_image1);
         drawerLayout = findViewById(R.id.drawerlayout);
         navigationView = findViewById(R.id.navigtion_view);
-        contentView = findViewById(R.id.layout_context);
+        contentView = findViewById(R.id.convert_view_linearlayout);
+        about_us=findViewById(R.id.home_about_us);
+        wholesale_inquiries=findViewById(R.id.home_whole_sale_inquiries);
+        coperation_gifts=findViewById(R.id.home_coperation_gifts);
+        our_history=findViewById(R.id.home_our_history);
+        careers=findViewById(R.id.home_careers);
+        charities=findViewById(R.id.home_charities);
+        support=findViewById(R.id.home_support);
+        shipping_returns=findViewById(R.id.home_shipping_returns);
+        faqs=findViewById(R.id.home_home_faqs);
+        store_location=findViewById(R.id.home_store_locator);
+        my_account=findViewById(R.id.home_my_account);
+        privacy_policy=findViewById(R.id.home_privacy_policy);
+
 
         anim1 = AnimationUtils.loadAnimation(this, R.anim.animation);
         anim2 = AnimationUtils.loadAnimation(this, R.anim.animation_text);
         menu_anim = AnimationUtils.loadAnimation(this, R.anim.leaf_anim);
+        leaf_anim1 = AnimationUtils.loadAnimation(this,R.anim.leaf_anim);
 
         txt1.setAnimation(anim1);
         txt2.setAnimation(anim2);
-        relativeLayout.setAnimation(anim1);
-        imageView.setAnimation(menu_anim);
+        linearlayout_shop.setAnimation(anim1);
+//        imageView.setAnimation(menu_anim);
+//        imageView1.setAnimation(menu_anim);
+        txt3.setAnimation(anim1);
+        txt4.setAnimation(anim2);
+        imageView2.setAnimation(leaf_anim1);
+        txt5.setAnimation(anim1);
+        txt6.setAnimation(anim1);
+        txt7.setAnimation(anim1);
+        learn_btn.setAnimation(anim1);
+
 
         NavigationDrawer();
         AnimationNavigationDrawer();
+        AutoImageSliders();
 
-        shop_btn.setOnClickListener(new View.OnClickListener() {
+
+        shop_btn.setOnClickListener(v -> startActivity(new Intent(Home.this, Shop.class)));
+
+        shop_btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Home.this, "shop", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Home.this, Shop.class));
             }
         });
+    }
+
+    private void AutoImageSliders() {
+
+        AutoImageSlider autoImageSlider = findViewById(R.id.autoImageSlider);
+
+        ArrayList<ImageSlidesModel> imageSlidesModels = new ArrayList<>();
+
+        try {
+
+            imageSlidesModels.add(new ImageSlidesModel("https://images.unsplash.com/photo-1625033405953-f20401c7d848?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hhaXxlbnwwfHwwfHx8MA%3D%3D","Chai Teas"));
+            imageSlidesModels.add(new ImageSlidesModel("https://plus.unsplash.com/premium_photo-1677528573563-44ac31cd3b7e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2hhaXxlbnwwfHwwfHx8MA%3D%3D","Tea"));
+            imageSlidesModels.add(new ImageSlidesModel("https://images.unsplash.com/photo-1536514888772-a269c6a8a198?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNoYWl8ZW58MHx8MHx8fDA%3D","Single Estate"));
+            imageSlidesModels.add(new ImageSlidesModel("https://images.unsplash.com/photo-1614221724928-a0ee7470a1f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNoYWl8ZW58MHx8MHx8fDA%3D","Japanese Matcha"));
+
+            autoImageSlider.setImageList(imageSlidesModels, ImageScaleType.CENTER_CROP);
+            autoImageSlider.setDefaultAnimation();
+        }
+        catch (ExceptionsClass e){
+            throw new RuntimeException(e);
+        }
     }
 
 
@@ -117,9 +180,17 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
         //Home
         if (item.getItemId() == R.id.nav_main_home) {
-            Toast.makeText(this, "Main Home", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "Main Home", Toast.LENGTH_SHORT).show();
+
+            startActivity(new Intent(Home.this, Home.class));
+
+
         } else if (item.getItemId() == R.id.nav_shop_home) {
-            Toast.makeText(this, "Shop Home", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "Shop Home", Toast.LENGTH_SHORT).show();
+
+            startActivity(new Intent(Home.this, Home_Shop_now.class));
+
+
         } else if (item.getItemId() == R.id.nav_dark_home_tea_room) {
             Toast.makeText(this, "Dark Home Tea Room", Toast.LENGTH_SHORT).show();
         } else if (item.getItemId() == R.id.nav_metro_matcha) {
@@ -206,4 +277,5 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     private void showToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
+
 }

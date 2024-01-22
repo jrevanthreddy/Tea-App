@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Home_Shop_now">
+
+    <LinearLayout
+        android:id="@+id/linearLayout_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#8DC384"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/menu_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center"
+            android:paddingRight="5dp"
+            android:src="@drawable/profile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/search_background"
+            android:drawableLeft="@drawable/search"
+            android:drawableRight="@drawable/baseline_mic_none_24"
+            android:drawablePadding="10dp"
+            android:hint="Search here"
+            android:padding="8dp"
+            android:textSize="22sp" />
+
+        <ImageView
+            android:id="@+id/cart_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+            android:paddingLeft="5dp"
+            android:src="@drawable/baseline_add_shopping_cart_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/great_customer_service" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/premium_teas_from_around_the_world"
+            android:textColor="#384E33"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/from_asia_to_africa_india_to_north_america_we_have_a_wide_variety_of_teas_that_have_been_made_by_passionate_tea_farmers_of_all_different_walks_of_life_from_floral_hints_to_the_fruity_tones_you_can_get_a_taste_of_the_world_in_the_comfort_of_your_cup"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="#384E33"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/what_we_re_drinking_now"
+            android:textSize="24sp"
+            android:layout_marginTop="20dp"
+            android:textColor="#384E33"
+            android:textStyle="bold"
+            android:gravity="center"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp">
+        <TextView
+            android:id="@+id/latest_products"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/latest_products"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:textColor="#384E33"/>
+        <TextView
+            android:id="@+id/Featured_products"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/featured_products"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:textColor="#384E33"/>
+    </LinearLayout>
+        <TextView
+            android:id="@+id/best_seller"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:text="@string/beat_seller"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:textColor="#384E33"/>
+    </LinearLayout>
+            <FrameLayout
+                android:id="@+id/fragment_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="30dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/table_bg">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:gravity="center"
+                        android:textColor="#192217"
+                        android:text="100% Money back"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#222020"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:textColor="#192217"
+                        android:text="Free delivery for order over $200"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#222020"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:textColor="#192217"
+                        android:text="Quality Guarantee"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="COMPANY"
+                    android:layout_marginTop="50dp"
+                    android:textColor="#192217"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/home_about_us"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="About us"
+                    android:textColor="#384E33"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/home_whole_sale_inquiries"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Wholse sale Inquiries"
+                    android:textColor="#384E33"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/home_coperation_gifts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Coperation Gifts"
+                    android:textColor="#384E33"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/home_our_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Our History"
+                    android:textColor="#384E33"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/home_careers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Careers"
+                    android:textColor="#384E33"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="45dp"
+                    android:text="STORE"
+                    android:textColor="#192217"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/home_affiliate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Affiliate"
+                    android:textColor="#384E33"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/home_bestsellers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Bestsellers"
+                    android:textColor="#384E33"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/home_discount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Discount"
+                    android:textColor="#384E33"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/home_latest_products"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Latest products"
+                    android:textColor="#384E33"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/home_sale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Sale"
+                    android:textColor="#384E33"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="45dp"
+                    android:text="ACCOUNT"
+                    android:textColor="#192217"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/home_my_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="My Account"
+                    android:textColor="#384E33"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/home_my_orders"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="My Orders"
+                    android:textColor="#384E33"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/home_returns"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Returns"
+                    android:textColor="#384E33"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/home_shipping"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="shipping"
+                    android:textColor="#384E33"
+                    android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/home_wishlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Wishlist"
+                    android:textColor="#384E33"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:src="@drawable/logo_mobile" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Join our news letter and get $20 for your first order"
+                    android:textColor="#192217"
+                    android:textStyle="bold"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#BDB8B8"
+                    android:drawableRight="@drawable/baseline_email_24"
+                    android:hint="Enter yout email"
+                    android:inputType="textEmailAddress"
+                    android:textColorHint="#385033"
+                    android:textSize="18sp" />
+                
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="30dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/facebook_icon"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/twitter_icon"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20dp"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/linkedin_icon"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20dp"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/youtube_icon"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20dp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="Copyright © 2023 Ocha House. All Rights Reserved"
+                    android:textColor="#4D6847"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(+800) 1234 5678 90"
+                    android:textSize="24sp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="#151C13"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="info@sample.com"
+                    android:layout_marginTop="20dp"
+                    android:textColor="#151C13"
+                    android:textSize="20sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

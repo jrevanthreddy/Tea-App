@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawerlayout"
@@ -16,250 +17,1664 @@
         app:headerLayout="@layout/activity_menu_header"
         app:menu="@menu/main_menu" />
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/linearLayout_search"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:background="#8DC384"
+            android:padding="10dp">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/layout_context"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/gaiwan">
+            <ImageView
+                android:id="@+id/menu_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:paddingRight="5dp"
+                android:src="@drawable/profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:id="@+id/menu_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:padding="15dp"
-                    android:src="@drawable/white_menu"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/search_background"
+                android:drawableLeft="@drawable/search"
+                android:drawableRight="@drawable/baseline_mic_none_24"
+                android:drawablePadding="10dp"
+                android:hint="Search here"
+                android:padding="8dp"
+                android:textSize="22sp" />
 
-                <TextView
-                    android:id="@+id/textView1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="150dp"
-                    android:fontFamily="cursive"
-                    android:text="Organic Tea"
-                    android:textAlignment="center"
-                    android:textColor="#F19F27"
-                    android:textSize="80sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/menu_image" />
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="80dp"
-                    android:text="HAND MADE GAIWAN TEA SET"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView1" />
-
-                <RelativeLayout
-                    android:id="@+id/relativelayout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="175dp"
-                    android:background="@drawable/shop_btn_custom"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/textView2">
-
-                    <Button
-                        android:id="@+id/shop_Btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@android:color/transparent"
-                        android:text="S H O P"
-                        android:textSize="20dp" />
-                </RelativeLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <LinearLayout
+            <ImageView
+                android:id="@+id/cart_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:paddingLeft="5dp"
+                android:src="@drawable/baseline_add_shopping_cart_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+
+        <ScrollView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/convert_view_linearlayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:padding="30dp">
+                android:padding="10dp">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="100dp"
-                    android:text="EXPERIENCE"
-                    android:textColor="#F19F27"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="The Story Behind Our Ocha House"
-                    android:textColor="#2A322E"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="20dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="We also specialize in bubble tea, a beverage originating from Taiwan that combines freshly brewed teas with a large variety of exotic natural fruit concentrates, served cold with delicious chewy tapioca pearls."
-                    android:textSize="20sp"
-                    android:layout_marginTop="20dp"
-                    android:textColor="#2A322E"/>
-                <Button
+                <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Learn More"
-                    android:textSize="20sp"
-                    android:textColor="#2A322E"
-                    android:layout_marginTop="15dp"
-                    android:backgroundTint="#648173"/>
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    app:cardCornerRadius="10dp">
+
+                    <ViewFlipper
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autoStart="true"
+                        android:flipInterval="6000"
+                        android:inAnimation="@android:anim/slide_in_left"
+                        android:outAnimation="@android:anim/slide_in_left">
+
+
+                        <LinearLayout
+                            android:id="@+id/layout_context"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            android:background="@drawable/gaiwan"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:fontFamily="cursive"
+                                android:text="Organic Tea"
+                                android:textAlignment="center"
+                                android:textColor="#F19F27"
+                                android:textSize="80sp" />
+
+                            <TextView
+                                android:id="@+id/textView2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:text="HAND MADE GAIWAN TEA SET"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/linear_layout_shop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="50dp"
+                                android:background="@drawable/shop_btn_custom">
+
+                                <Button
+                                    android:id="@+id/shop_Btn"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="@android:color/transparent"
+                                    android:text="S H O P"
+                                    android:textSize="20dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/layout_context1"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            android:background="#2A322E"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/white_leaf_image1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:src="@drawable/leaf" />
+
+                            <TextView
+                                android:id="@+id/textView6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="25dp"
+                                android:gravity="center"
+                                android:text="H A N D  M A D E  T E A  S E T"
+                                android:textColor="@color/white"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textView5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="25dp"
+                                android:fontFamily="cursive"
+                                android:text="Organic Tea House"
+                                android:textAlignment="center"
+                                android:textColor="#F19F27"
+                                android:textSize="50sp" />
+                            <LinearLayout
+                                android:id="@+id/linear_layout_shop1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/shop_btn_custom">
+
+                                <Button
+                                    android:id="@+id/shop_Btn1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="@android:color/transparent"
+                                    android:text="S H O P"
+                                    android:textSize="20dp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+
+                    </ViewFlipper>
+
+                </androidx.cardview.widget.CardView>
+
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="30dp"
-                    android:layout_marginTop="100dp"
-                    android:background="#ABBFA8">
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        app:cardCornerRadius="100dp"
-                        android:layout_gravity="center"
-                        android:backgroundTint="@color/white"
-                        android:layout_marginTop="24dp">
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:src="@drawable/benefiting_you"/>
-                    </androidx.cardview.widget.CardView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Benefiting you"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:textColor="#2A322E"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text=" From sleep support to focus, energy, confidence, calm, and more."
-                        android:textSize="20sp"
-                        android:gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:textColor="#2E5A44"/>
+                    android:padding="30dp">
 
-                    <View
-                        android:id="@+id/lineView"
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:layout_below="@id/textView1"
-                        android:layout_marginTop="25dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="#000000" />
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        app:cardCornerRadius="100dp"
-                        android:layout_gravity="center"
-                        android:backgroundTint="@color/white"
-                        android:layout_marginTop="24dp">
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:src="@drawable/benefiting_you"/>
-                    </androidx.cardview.widget.CardView>
                     <TextView
+                        android:id="@+id/experience"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Eco package "
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:textColor="#2A322E"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Our tube packaging is 100% biodegradable + refillable, plastic-free"
-                        android:textSize="20sp"
-                        android:gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:textColor="#2E5A44"/>
+                        android:layout_marginTop="35dp"
+                        android:text="EXPERIENCE"
+                        android:textColor="#F19F27"
+                        android:textSize="20sp" />
 
-                    <View
-                        android:id="@+id/lineView1"
+                    <TextView
+                        android:id="@+id/story_behind"
                         android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:layout_below="@id/textView1"
-                        android:layout_marginTop="25dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="#000000" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="The Story Behind Our Ocha House"
+                        android:textColor="#2A322E"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/specilize"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="We also specialize in bubble tea, a beverage originating from Taiwan that combines freshly brewed teas with a large variety of exotic natural fruit concentrates, served cold with delicious chewy tapioca pearls."
+                        android:textColor="#2A322E"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/learn_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:backgroundTint="#648173"
+                        android:text="Learn More"
+                        android:textColor="#2A322E"
+                        android:textSize="20sp" />
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        app:cardCornerRadius="100dp"
-                        android:layout_gravity="center"
-                        android:backgroundTint="@color/white"
-                        android:layout_marginTop="24dp">
-                        <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="10dp">
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:src="@drawable/benefiting_you"/>
+                            android:layout_height="wrap_content">
+                            <com.codebyashish.autoimageslider.AutoImageSlider
+                                android:id="@+id/autoImageSlider"
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                app:ais_auto_sliding="true"
+                                app:ais_corner_radius="10"
+                                app:ais_indicator_align="@string/center"
+                                app:ais_placeholder="@drawable/placeholder_default_loading"
+                                app:ais_time_interval="5000"
+                                app:ais_title_background="@drawable/text_background"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent" />
+                        </LinearLayout>
                     </androidx.cardview.widget.CardView>
-                    <TextView
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="100dp"
+                        android:background="#ABBFA8"
+                        android:orientation="vertical"
+                        android:padding="30dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="24dp"
+                            android:backgroundTint="@color/white"
+                            app:cardCornerRadius="100dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/benefiting_you" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="Benefiting you"
+                            android:textColor="#2A322E"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text=" From sleep support to focus, energy, confidence, calm, and more."
+                            android:textColor="#2E5A44"
+                            android:textSize="20sp" />
+
+                        <View
+                            android:id="@+id/lineView"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_below="@id/textView1"
+                            android:layout_marginTop="25dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="#000000" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="24dp"
+                            android:backgroundTint="@color/white"
+                            app:cardCornerRadius="100dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/benefiting_you" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="Eco package "
+                            android:textColor="#2A322E"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="Our tube packaging is 100% biodegradable + refillable, plastic-free"
+                            android:textColor="#2E5A44"
+                            android:textSize="20sp" />
+
+                        <View
+                            android:id="@+id/lineView1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_below="@id/textView1"
+                            android:layout_marginTop="25dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="#000000" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="24dp"
+                            android:backgroundTint="@color/white"
+                            app:cardCornerRadius="100dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/benefiting_you" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="Highest quality "
+                            android:textColor="#2A322E"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text=" Our delicious teas using only the finest organic or wild harvested ingredients."
+                            android:textColor="#2E5A44"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Highest quality "
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:textColor="#2A322E"/>
-                    <TextView
+                        android:background="@drawable/linearlayout_background"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:src="@drawable/home_page_img" />
+                            </RelativeLayout>
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="310dp"
+                                android:src="@drawable/mint_leaf" />
+                        </RelativeLayout>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="24dp"
+                            android:backgroundTint="@color/white"
+                            app:cardCornerRadius="100dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/baseline_card_giftcard_24" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="Loyal-Tea Rewards"
+                            android:textColor="#BFC5C1"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text=" Your all access pass to exclusive rewards"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                        <View
+                            android:id="@+id/lineView3"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_below="@id/textView1"
+                            android:layout_marginTop="25dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="#000000" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="24dp"
+                            android:backgroundTint="@color/white"
+                            app:cardCornerRadius="100dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/baseline_blur_circular_24" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="Brand Ambassadors "
+                            android:textColor="#BFC5C1"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="Earn commissions from all qualifying purchases "
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                        <View
+                            android:id="@+id/lineView4"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_below="@id/textView1"
+                            android:layout_marginTop="25dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="#000000" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="24dp"
+                            android:backgroundTint="@color/white"
+                            app:cardCornerRadius="100dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/baseline_handshake_24" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="Wholesale "
+                            android:textColor="#BFC5C1"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="Away to bolster your bottom line quickly and easily"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=" Our delicious teas using only the finest organic or wild harvested ingredients."
-                        android:textSize="20sp"
-                        android:gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:textColor="#2E5A44"/>
+                        android:layout_marginTop="60dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Featured Items"
+                            android:textColor="#042B19"
+                            android:textSize="25sp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp" />
+                    </LinearLayout>
                 </LinearLayout>
-                <RelativeLayout
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#04321D">
-                    <ImageView
+                    android:layout_marginTop="50dp"
+                    android:background="#EAEFE6"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="30dp"
+                            android:text="America's #1 Selling Farm-Direct Organic Japanese Matcha"
+                            android:textColor="#042B19"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="300dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/rating2" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="50,000+ Reviews"
+                            android:textColor="#042B19"
+                            android:textSize="30sp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp" >
+                        </androidx.recyclerview.widget.RecyclerView>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="30dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="25dp"
+                        android:text="What we're Drinking Now"
+                        android:textColor="#042B19"
+                        android:textSize="34sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#F1DDCC"
+                            android:src="@drawable/mountain_chai_loose_leaf" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp">
+
+                            <ImageView
+                                android:layout_width="100dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/rating2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2 Reviews" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="Mountain Chai Loose Leaf"
+                            android:textColor="#042B19"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$14.00-$20.00"
+                                android:textColor="#042B19"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="40dp"
+                                android:drawableRight="@drawable/baseline_card_giftcard_24"
+                                android:drawablePadding="10dp"
+                                android:text="Select options"
+                                android:textColor="#042B19"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="600dp"
+                            android:background="#C0CBB7"
+                            android:src="@drawable/chai_spiced_oolong_tea" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp">
+
+                            <ImageView
+                                android:layout_width="100dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/rating2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1 Reviews" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="Chai Spiced Oolong Tea"
+                            android:textColor="#042B19"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="From: $14.00 / month"
+                                android:textColor="#042B19"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:drawablePadding="10dp"
+                                android:text="Select options"
+                                android:textColor="#042B19"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#F1DDCC"
+                            android:src="@drawable/hight_mountain_oolong_tea" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp">
+
+                            <ImageView
+                                android:layout_width="100dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/rating2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="5 Reviews" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="High Mountain Oolong Tea"
+                            android:textColor="#042B19"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$16.49"
+                                android:textColor="#042B19"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="80dp"
+                                android:drawableRight="@drawable/baseline_card_giftcard_24"
+                                android:drawablePadding="10dp"
+                                android:text="Buy on Amazon"
+                                android:textColor="#042B19"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/gleam_porcelain_teapot" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp">
+
+                            <ImageView
+                                android:layout_width="100dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/rating2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1 Reviews" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="Gleam Porcelain Teapot"
+                            android:textColor="#042B19"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$16.49"
+                                android:textColor="#042B19"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="90dp"
+                                android:drawableRight="@drawable/baseline_card_giftcard_24"
+                                android:drawablePadding="10dp"
+                                android:text="Select options"
+                                android:textColor="#042B19"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#F1DDCC"
+                            android:src="@drawable/gift_set_teapot" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp">
+
+                            <ImageView
+                                android:layout_width="100dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/rating2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1 Reviews" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="Gift Set TeaPot"
+                            android:textColor="#042B19"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$16.49-$20.00"
+                                android:textColor="#042B19"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="40dp"
+                                android:drawableRight="@drawable/baseline_card_giftcard_24"
+                                android:drawablePadding="10dp"
+                                android:text="View products"
+                                android:textColor="#042B19"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#F1DDCC"
+                            android:src="@drawable/matcha_latted_cafe_style" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp">
+
+                            <ImageView
+                                android:layout_width="100dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/rating2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1 Reviews" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="Matcha Latted Cafe Style"
+                            android:textColor="#042B19"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$14.00-$16.40"
+                                android:textColor="#042B19"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="40dp"
+                                android:drawableRight="@drawable/baseline_card_giftcard_24"
+                                android:drawablePadding="10dp"
+                                android:text="Select options"
+                                android:textColor="#042B19"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#F1DDCC"
+                            android:src="@drawable/matcha_latte" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp">
+
+                            <ImageView
+                                android:layout_width="100dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/rating2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1 Reviews" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="Mountain Chai Loose Leaf"
+                            android:textColor="#042B19"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$15.00"
+                                android:textColor="#042B19"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="40dp"
+                                android:drawableRight="@drawable/baseline_card_giftcard_24"
+                                android:drawablePadding="10dp"
+                                android:text="Add to cart"
+                                android:textColor="#042B19"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#F1DDCC"
+                            android:src="@drawable/winter_wellness_herbal_tea_kit" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp">
+
+                            <ImageView
+                                android:layout_width="100dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/rating2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1 Reviews" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="Winter Wellness Herbal Tea Kit"
+                            android:textColor="#042B19"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$15.00"
+                                android:textColor="#042B19"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="40dp"
+                                android:drawableRight="@drawable/baseline_card_giftcard_24"
+                                android:drawablePadding="10dp"
+                                android:text="Add to cart"
+                                android:textColor="#042B19"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#E3C4C4"
+                    android:orientation="vertical"
+                    android:padding="30dp">
+
+                    <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="200dp"
-                        android:src="@drawable/home_page_img"
-                        android:layout_marginRight="130dp"
-                        android:layout_marginTop="20dp" />
-                </RelativeLayout>
+                        android:layout_height="wrap_content"
+                        android:text="KICKSTART YOUR CELEBRATIONS"
+                        android:textColor="#FF6D00"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="24 Days of Advent"
+                        android:textSize="34sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Share the joy of wellness with your family and friends with our choicest teas. Happiness Delivered right in time."
+                        android:textColor="#042B19"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="$25.00 / month for 3 months and a $16.49 sign-up fee"
+                        android:textColor="#042B19"
+                        android:textSize="18sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.8dp"
+                        android:layout_below="@+id/textView1"
+                        android:layout_marginTop="30dp"
+                        android:background="#000000" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Free US Delivery on US Orders Over $35Steeping Time: 2-3 minTemperature: 190°F / 87°CCurabitur rutrum nunc odio, et fermentum dui sollicitudin at. Nunc in diam sit amet nisl laoreet dictum sed nec lorem."
+                        android:textColor="#042B19"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:orientation="vertical"
+                    android:padding="30dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/handmade_products" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20sp"
+                        android:gravity="center"
+                        android:text="Handmade Products"
+                        android:textColor="#042B19"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:gravity="center"
+                        android:text="We create healthy artisan loose leaf teas, bath and body products, and infused sugars in small batches to ensure quality and freshness."
+                        android:textColor="#042B19"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/great_customer_service" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20sp"
+                        android:gravity="center"
+                        android:text="Great Customer Service"
+                        android:textColor="#042B19"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:gravity="center"
+                        android:text="Finding companies that genuinely care about their customers is hard these days. We are here for you. We truly care about your health."
+                        android:textColor="#042B19"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#E1142E08"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="SOURCED WITH CARE"
+                        android:textColor="#FF6D00"
+                        android:textSize="18sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Sustainability and the Environment "
+                        android:textColor="@color/white"
+                        android:textSize="30dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="We’re concerned about the use of plastics and are taking action to improve the sustainability of our products and reduce their impact on the environment."
+                        android:textColor="#D5CBCB"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="100% Organic "
+                        android:textColor="@color/white"
+                        android:textSize="30dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Et malesuada fames ac turpis egestas maecenas pharetra convallis met nisl purus."
+                        android:textColor="#D5CBCB"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Always Fresh "
+                        android:textColor="@color/white"
+                        android:textSize="30dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="40dp"
+                        android:text="Et malesuada fames ac turpis egestas maecenas pharetra convallis met nisl purus.."
+                        android:textColor="#D5CBCB"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:src="@drawable/environment" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="30dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/baseline_energy_savings_leaf_24" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Blog &amp; News"
+                        android:textColor="#0A502F"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Integer quis tempor orci. Suspendisse potenti. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+                        android:textColor="#0A502F"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/reasons_to_drink" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#0A502F">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Healthcare"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:backgroundTint="#0A502F">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="LifeStyle"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="Five Reasons to Drink Green Tea Daily"
+                        android:textColor="#0A502F"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="In the spirit of all things green today, we wanted to break down some of the health benefits of one of the most classic teas, GREEN tea (and matcha of course)! "
+                        android:textColor="#0A502F"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="3 min read . may 24,2022"
+                        android:textColor="#0A502F"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:scaleType="matrix"
+                        android:src="@drawable/three_reasons_yerba" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:backgroundTint="#0A502F">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Healthcare"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="start"
+                        android:text="3 Reasons We Are Obsessed with Yerba Mata Tea"
+                        android:textColor="#0A502F"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="In the spirit of all things green today, we wanted to break down some of the health benefits of one of the most classic teas, GREEN tea (and matcha of course)! "
+                        android:textColor="#0A502F"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="3 min read . may 24,2022"
+                        android:textColor="#0A502F"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/how_tea_can_help" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:backgroundTint="#0A502F">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Recipe"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="start"
+                        android:text="How Tea Can Help You Stay Motivated This Winter"
+                        android:textColor="#0A502F"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Time is really flying by fast as the winter season is now just a few weeks away. And certainly, almost everyone is excited about the upcoming holiday."
+                        android:textColor="#0A502F"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="3 min read . may 24,2022"
+                        android:textColor="#0A502F"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="50dp"
+                        android:backgroundTint="#FF6D00"
+                        android:text="VIEW ALL ARTICLES" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#0A502F"
+                    android:orientation="vertical"
+                    android:padding="30dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="COMPANY"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/home_about_us"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="About us"
+                        android:textColor="#BDB8B8"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/home_whole_sale_inquiries"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Wholse sale Inquiries"
+                        android:textColor="#BDB8B8"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/home_coperation_gifts"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Coperation Gifts"
+                        android:textColor="#BDB8B8"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/home_our_history"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Our History"
+                        android:textColor="#BDB8B8"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/home_careers"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Careers"
+                        android:textColor="#BDB8B8"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/home_charities"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Charities"
+                        android:textColor="#BDB8B8"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="45dp"
+                        android:text="COMPANY"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/home_support"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Support"
+                        android:textColor="#BDB8B8"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/home_shipping_returns"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Shipping &amp; Returns"
+                        android:textColor="#BDB8B8"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/home_home_faqs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="FAQs"
+                        android:textColor="#BDB8B8"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/home_store_locator"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Store Locator"
+                        android:textColor="#BDB8B8"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/home_my_account"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="My Account"
+                        android:textColor="#BDB8B8"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/home_privacy_policy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Privacy Policy"
+                        android:textColor="#BDB8B8"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Tea has a complex positive effect on the body. Daily use of a cup of tea is good for your health."
+                        android:textColor="#BDB8B8"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="45dp"
+                        android:text="SIGN UP AND SAVE"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/logo_mobile" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals."
+                        android:textColor="#BDB8B8"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="#BDB8B8"
+                        android:drawableRight="@drawable/baseline_email_24"
+                        android:hint="Enter yout email"
+                        android:inputType="textEmailAddress"
+                        android:textColorHint="#BDB8B8"
+                        android:textSize="18sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.8dp"
+                        android:background="#000000" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:text="Copyright © 2023 Ocha House. All Rights Reserved"
+                        android:textColor="#BDB8B8"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+
             </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
+        </ScrollView>
+    </LinearLayout>
 </androidx.drawerlayout.widget.DrawerLayout>
