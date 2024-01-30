@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(MainActivity.this, Home.class));
+                startActivity(new Intent(MainActivity.this, Login_Page.class));
                 finish();
             }
         },SPLASH_SCREEN);

@@ -266,7 +266,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="100dp"
+                        android:layout_marginTop="50dp"
                         android:background="#ABBFA8"
                         android:orientation="vertical"
                         android:padding="30dp">
